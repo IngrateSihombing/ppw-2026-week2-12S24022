@@ -1,5 +1,535 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f8fafc;
-    padding:40px;
+/* Reset */
+:root {
+    --bg-main: #F5F8FC;
+    --bg-section: #EDF3FA;
+    --primary: #6B8FC4;
+    --primary-dark: #5277AE;
+    --text-main: #1E2A3A;
+    --text-secondary: #64748B;
+    --white: #FFFFFF;
+    --border: #DCE6F2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+
+body {
+
+    font-family: "Segoe UI", sans-serif;
+
+    background: #F5F8FC;
+
+    color: #1E2A3A;
+
+    line-height: 1.6;
+}
+
+/* Navbar */
+header {
+    background: white;
+    padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1e293b;
+    font-weight: 500;
+}
+
+
+/* Hero */
+.hero {
+    min-height: 90vh;
+    padding: 80px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.greeting {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.hero h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.hero-text > p:not(.greeting) {
+    margin-bottom: 30px;
+}
+
+
+/* Button */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+
+/* Hero Image */
+.hero-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* Section */
+section:not(.hero) {
+    padding: 80px 8%;
+    min-height: 300px;
+}
+
+section:not(.hero) h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #1e293b;
+    color: white;
+}
+
+/* About Section */
+.about-section {
+    background: white;
+}
+
+.section-title p {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.about-text {
+    max-width: 550px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-info {
+    min-width: 300px;
+}
+
+.about-info div {
+    margin-bottom: 20px;
+}
+
+.about-info strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+/* Education Section */
+.education-section {
+    background: white;
+}
+
+.education-table {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.education-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.education-table th,
+.education-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.education-table th {
+    background: #2563eb;
+    color: white;
+}
+
+.education-table tr:hover {
+    background: #f8fafc;
+}
+
+/* Projects Section */
+.projects-section {
+    background: #f8fafc;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #e2e8f0;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.project-number {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    margin-bottom: 20px;
+}
+
+.project-card ul {
+    list-style: none;
+}
+
+.project-card li {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 3px;
+    background: #eff6ff;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+
+/* Contact Section */
+.contact-section {
+    background: white;
+}
+
+.contact-content {
+    display: flex;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.contact-text {
+    flex: 1;
+}
+
+.contact-text h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.contact-form {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    header {
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        gap: 12px;
+        font-size: 13px;
+    }
+
+
+    /* Hero */
+    .hero {
+        min-height: auto;
+        padding: 60px 5%;
+
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .hero-image img {
+        width: 220px;
+        height: 220px;
+    }
+
+
+    /* About */
+    section:not(.hero) {
+        padding: 60px 5%;
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+
+    /* Skills */
+    .skills-content {
+        flex-direction: column;
+    }
+
+
+    /* Projects */
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Contact */
+    .contact-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* =========================
+   Extra Styling
+   ========================= */
+
+/* Navbar Hover */
+.nav-links a {
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+
+/* Button Hover */
+.button {
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(37, 99, 235, 0.25);
+}
+
+
+/* Section Title */
+.section-title {
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #2563eb;
+}
+
+
+/* Project Hover */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Form Focus */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* ===== SOFT BLUE BACKGROUND ===== */
+
+body {
+    background: #F5F8FC;
+}
+
+/* Background untuk bagian utama */
+section {
+    background-color: #F5F8FC;
+}
+
+/* Hero */
+#home {
+    background: linear-gradient(
+        135deg,
+        #EEF5FC 0%,
+        #F8FAFD 100%
+    );
+}
+
+/* About */
+#about {
+    background-color: #EDF4FB;
+}
+
+/* Skills */
+#skills {
+    background-color: #F5F8FC;
+}
+
+/* Projects */
+#projects {
+    background-color: #EDF4FB;
+}
+
+/* Contact */
+#contact {
+    background-color: #F5F8FC;
+}
+
+/* =========================================
+   SOFT BLUE PORTFOLIO BACKGROUND
+   ========================================= */
+
+/* Background utama */
+body {
+    background-color: #F5F8FC;
+}
+
+/* Hero */
+#home {
+    background: linear-gradient(135deg, #EAF2FA, #F7FAFD);
+}
+
+/* About */
+#about {
+    background-color: #EEF5FB;
+}
+
+/* Skills */
+#skills {
+    background-color: #F8FAFD;
+}
+
+/* Education */
+#education {
+    background-color: #EEF5FB;
+}
+
+/* Projects */
+#projects {
+    background-color: #F5F8FC;
+}
+
+/* Contact */
+#contact {
+    background-color: #EEF5FB;
+}
+
+/* Footer */
+footer {
+    background-color: #DCE8F4;
 }
