@@ -7,332 +7,274 @@
 
     <title>Portfolio Ingrate Joy Sihombing</title>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- CSS milik kita -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <header>
-        <nav class="navbar">
-            <h2 class="logo">Joy.</h2>
+ <!-- ===== NAVBAR ===== -->
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand logo" href="#">
+            Joy.
+        </a>
+
+        <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
             </ul>
-        </nav>
-    </header>
 
+        </div>
 
-    <!-- Main Content -->
-    <main>
+    </div>
 
-        <!-- Hero Section -->
-        <section id="home" class="hero">
+</nav>
 
-            <div class="hero-text">
-                <p class="greeting">HELLO, I'M</p>
+<!-- ===== HERO ===== -->
+<!-- ===== ABOUT ===== -->
 
-                <h1>Ingrate Joy Sihombing</h1>
+<!-- ===== ABOUT ===== -->
 
-                <h2>Information Systems Student</h2>
+<section id="about" class="about-section">
 
-                <p>
-                    Saya adalah mahasiswa Sistem Informasi yang tertarik
-                    pada teknologi, data, dan pengembangan sistem.
+    <div class="container">
+
+        <div class="section-title text-center">
+            <h2>About Me</h2>
+            <p>Mengenal saya lebih dekat.</p>
+        </div>
+
+        <div class="about-card">
+
+            <h3>Hi, I'm Ingrate Joy Sihombing</h3>
+
+            <p>
+                Saya adalah mahasiswa Semester 5 Program Studi Sistem Informasi di Institut Teknologi Del. Saya tertarik mempelajari pengembangan website, analisis data, dan desain antarmuka pengguna sebagai bagian dari proses belajar di bidang teknologi informasi.
+
+            <p>
+                Saat ini saya sedang mengembangkan kemampuan menggunakan HTML, CSS, Bootstrap, SQL Server, Python, dan Figma melalui praktikum perkuliahan dan proyek pribadi sebagai portfolio.
+            </p>
+
+            <div class="row g-3 mt-3">
+
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <small>Lokasi</small>
+                        <h6>Sumatera Utara</h6>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <small>Pendidikan</small>
+                        <h6>Institut Teknologi Del</h6>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <small>Bidang Minat</small>
+                        <h6>Web Development & Data Analytics</h6>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ===== SKILLS ===== -->
+
+<section id="skills" class="skills-section">
+
+    <div class="container">
+
+        <div class="section-title text-center">
+            <h2>My Skills</h2>
+            <p>Teknologi dan tools yang sedang saya pelajari.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="skill-card text-center">
+
+                    <i class="bi bi-filetype-html skill-icon"></i>
+
+                    <h4>HTML5</h4>
+
+                    <p>Membangun struktur halaman website.</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="skill-card text-center">
+
+                    <i class="bi bi-filetype-css skill-icon"></i>
+
+                    <h4>CSS3</h4>
+
+                    <p>Membuat tampilan website yang menarik.</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="skill-card text-center">
+
+                    <i class="bi bi-bootstrap-fill skill-icon"></i>
+
+                    <h4>Bootstrap</h4>
+
+                    <p>Membuat website responsive dengan cepat.</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="skill-card text-center">
+
+                    <i class="bi bi-database-fill skill-icon"></i>
+
+                    <h4>SQL Server</h4>
+
+                    <p>Query database dan pengolahan data.</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="skill-card text-center">
+
+                    <i class="bi bi-code-slash skill-icon"></i>
+
+                    <h4>Python</h4>
+
+                    <p>Belajar data analytics dan AI dasar.</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="skill-card text-center">
+
+                    <i class="bi bi-palette-fill skill-icon"></i>
+
+                    <h4>Figma</h4>
+
+                    <p>Desain UI/UX dan prototype aplikasi.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section id="home" class="hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-7 hero-text">
+
+                <p class="hello">
+                    HELLO, I'M
                 </p>
 
-                <a href="#projects" class="button">
+                <h1>
+                    Ingrate Joy Sihombing
+                </h1>
+
+                <h3>
+                    Information Systems Student
+                </h3>
+
+                <p class="description">
+
+                    Mahasiswa Sistem Informasi Institut Teknologi Del yang memiliki ketertarikan pada Web Development, Data Analytics, dan UI/UX Design.
+
+                </p>
+
+                <a href="#projects" class="btn btn-primary btn-lg">
                     View My Projects
                 </a>
+
             </div>
 
+            <div class="col-lg-5 text-center">
 
-            <div class="hero-image">
-                <img
-                    src="images/foto-joy.jpg"
-                    alt="Foto profil Ingrate Joy Sihombing">
-            </div>
+              <img src="images/foto-joy.jpg"
+     class="profile-image img-fluid"
+     alt="Foto Joy">
 
-        </section>
-
-
-        <!-- Section lainnya akan kita buat nanti -->
-
-       <section id="about" class="about-section">
-
-    <div class="section-title">
-        <p>GET TO KNOW ME</p>
-        <h2>About Me</h2>
-    </div>
-
-    <div class="about-content">
-
-        <div class="about-text">
-            <p>
-                Halo! Saya Ingrate Joy Sihombing, mahasiswa
-                Sistem Informasi yang memiliki ketertarikan pada
-                teknologi dan pengembangan sistem informasi.
-            </p>
-
-            <p>
-                Saya tertarik untuk mempelajari bagaimana teknologi
-                dapat digunakan untuk menyelesaikan masalah dan
-                membantu pekerjaan menjadi lebih efektif.
-            </p>
-        </div>
-
-        <div class="about-info">
-
-            <div>
-                <strong>Nama</strong>
-                <p>Ingrate Joy Sihombing</p>
-            </div>
-
-            <div>
-                <strong>Program Studi</strong>
-                <p>Sistem Informasi</p>
-            </div>
-
-            <div>
-                <strong>Universitas</strong>
-                <p>Institut Teknologi Del</p>
-            </div>
-
-            <div>
-                <strong>Interest</strong>
-                <p>Technology & Data</p>
-            </div>
-
-        </div>
 
     </div>
 
 </section>
 
-       <section id="skills" class="skills-section">
+<!-- Bootstrap JS -->
 
-    <div class="section-title">
-        <p>MY ABILITIES</p>
-        <h2>Skills</h2>
-    </div>
-
-    <div class="skills-content">
-
-        <div class="skill-category">
-            <h3>Technical Skills</h3>
-
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>SQL</li>
-                <li>Microsoft Excel</li>
-            </ul>
-        </div>
-
-
-        <div class="skill-category">
-            <h3>Other Skills</h3>
-
-            <ul>
-                <li>Problem Solving</li>
-                <li>Teamwork</li>
-                <li>Communication</li>
-                <li>Project Management</li>
-            </ul>
-        </div>
-
-    </div>
-
-</section>
-<!-- Education Section -->
-<section id="education" class="education-section">
-
-    <div class="section-title">
-        <p>MY JOURNEY</p>
-        <h2>Education</h2>
-    </div>
-
-    <div class="education-table">
-
-        <table>
-
-            <thead>
-                <tr>
-                    <th>Year</th>
-                    <th>Institution</th>
-                    <th>Program</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>2024 - Present</td>
-                    <td>Institut Teknologi Del</td>
-                    <td>Sistem Informasi</td>
-                </tr>
-
-                <tr>
-                    <td>2021 - 2024</td>
-                    <td>SMA</td>
-                    <td>Ilmu Pengetahuan Alam</td>
-                </tr>
-            </tbody>
-
-        </table>
-
-    </div>
-
-</section>
-       <!-- Projects Section -->
-<section id="projects" class="projects-section">
-
-    <div class="section-title">
-        <p>MY WORK</p>
-        <h2>Projects</h2>
-    </div>
-
-    <div class="project-container">
-
-        <!-- Project 1 -->
-        <article class="project-card">
-            <div class="project-number">01</div>
-
-            <h3>Natural Images Classification</h3>
-
-            <p>
-                Proyek klasifikasi citra menggunakan Machine Learning
-                untuk mengenali beberapa kelas pada dataset Natural Images.
-            </p>
-
-            <ul>
-                <li>Python</li>
-                <li>Machine Learning</li>
-                <li>Image Classification</li>
-            </ul>
-        </article>
-
-
-        <!-- Project 2 -->
-        <article class="project-card">
-            <div class="project-number">02</div>
-
-            <h3>Database Management</h3>
-
-            <p>
-                Proyek perancangan dan pengelolaan database menggunakan
-                SQL untuk mengolah serta menampilkan informasi secara terstruktur.
-            </p>
-
-            <ul>
-                <li>SQL</li>
-                <li>Database</li>
-                <li>Data Management</li>
-            </ul>
-        </article>
-
-
-        <!-- Project 3 -->
-        <article class="project-card">
-            <div class="project-number">03</div>
-
-            <h3>AI Customer Feedback Analyzer</h3>
-
-            <p>
-                Konsep sistem AI yang digunakan untuk menganalisis
-                customer feedback dan membantu menghasilkan insight
-                dari masukan pengguna.
-            </p>
-
-            <ul>
-                <li>AI</li>
-                <li>Langflow</li>
-                <li>Data Analysis</li>
-            </ul>
-        </article>
-
-    </div>
-
-</section>
-
-       <!-- Contact Section -->
-<section id="contact" class="contact-section">
-
-    <div class="section-title">
-        <p>GET IN TOUCH</p>
-        <h2>Contact Me</h2>
-    </div>
-
-    <div class="contact-content">
-
-        <div class="contact-text">
-            <h3>Let's work together!</h3>
-
-            <p>
-                Jika ingin menghubungi saya, silakan isi
-                form di samping. Saya akan dengan senang hati
-                menerima pesan dan berdiskusi bersama.
-            </p>
-        </div>
-
-
-        <form class="contact-form">
-
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Your name"
-                    required>
-            </div>
-
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="your@email.com"
-                    required>
-            </div>
-
-
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    placeholder="Write your message..."
-                    required></textarea>
-            </div>
-
-
-            <button type="submit">
-                Send Message
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-    </main>
-
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Ingrate Joy Sihombing</p>
-    </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
