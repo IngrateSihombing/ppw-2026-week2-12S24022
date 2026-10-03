@@ -5,7 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".filter-btn").forEach(button => {
         button.addEventListener("click", () => {
-            const category = button.dataset.category;
+<
+
+
 
             loadProjects(category);
 
@@ -20,6 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
             button.classList.add("active");
         });
     });
+});
+<
+document.addEventListener("DOMContentLoaded", () => {
+    loadProfile();
+    loadProjects();
+    loadServices();
 });
 
 
@@ -42,10 +50,15 @@ async function loadProfile() {
 
 
 async function loadProjects(category = "all") {
-    try {
-        const projects = await ApiService.getProjects();
 
-        const container = document.getElementById("projects-container");
+    loadProjects();
+
+    async function loadServices() {
+
+    try {
+        const services = await ApiService.getServices();
+
+        const container = document.getElementById("services-container");
 
         container.innerHTML = `
             <div class="col-12 text-center">
@@ -69,6 +82,86 @@ async function loadProjects(category = "all") {
 
         container.innerHTML = "";
 
+
+        services.forEach(service => {
+            container.innerHTML += `
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+
+                            <i class="${service.icon} fs-1 mb-3"></i>
+
+                            <h5 class="card-title">
+                                ${service.title}
+                            </h5>
+
+                            <p class="card-text">
+                                ${service.description}
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+    } catch (error) {
+    console.error("Gagal memuat services:", error);
+
+    const container = document.getElementById("services-container");
+
+    container.innerHTML = `
+        <div class="col-12 text-center">
+            <p>Gagal memuat services. Silakan coba lagi.</p>
+        </div>
+    `;
+}
+};
+
+document.querySelectorAll(".filter-btn").forEach(button => {
+    button.addEventListener("click", () => {
+
+        const category = button.dataset.category;
+
+        loadProjects(category);
+
+        document.querySelectorAll(".filter-btn").forEach(btn => {
+            btn.classList.remove("active");
+            btn.classList.remove("btn-primary");
+            btn.classList.add("btn-outline-primary");
+        });
+
+        button.classList.remove("btn-outline-primary");
+        button.classList.add("btn-primary");
+        button.classList.add("active");
+    });
+});
+
+async function loadProjects(category = "all") {
+    try {
+        const projects = await ApiService.getProjects();
+
+       const container = document.getElementById("projects-container");
+
+container.innerHTML = `
+    <div class="col-12 text-center">
+        <p>Loading projects...</p>
+    </div>
+`;
+
+        const filteredProjects = category === "all"
+            ? projects
+            : projects.filter(project => project.category === category);
+if (filteredProjects.length === 0) {
+    container.innerHTML = `
+        <div class="col-12 text-center">
+            <p>Tidak ada project pada kategori ini.</p>
+        </div>
+    `;
+
+    return;
+}
+
         filteredProjects.forEach(project => {
             container.innerHTML += `
                 <div class="col-md-6 col-lg-4">
@@ -91,6 +184,11 @@ async function loadProjects(category = "all") {
                             <span class="badge bg-info text-dark">
                                 ${project.category}
                             </span>
+                            <button type="button"
+        class="btn btn-outline-primary mt-3"
+        onclick="showProjectDetail(${project.id})">
+    Lihat Project
+</button>
 
                             <br>
 
@@ -106,6 +204,7 @@ async function loadProjects(category = "all") {
                 </div>
             `;
         });
+
 
     } catch (error) {
         console.error("Gagal memuat projects:", error);
@@ -167,6 +266,23 @@ async function showProjectDetail(projectId) {
     try {
         const projects = await ApiService.getProjects();
 
+   } catch (error) {
+    console.error("Gagal memuat projects:", error);
+
+    const container = document.getElementById("projects-container");
+
+    container.innerHTML = `
+        <div class="col-12 text-center">
+            <p>Gagal memuat projects. Silakan coba lagi.</p>
+        </div>
+    `;
+}
+}
+
+function showProjectDetail(projectId) {
+    ApiService.getProjects().then(projects => {
+
+
         const project = projects.find(item => item.id === projectId);
 
         if (!project) {
@@ -183,12 +299,20 @@ async function showProjectDetail(projectId) {
         tagsContainer.innerHTML = "";
 
         project.tags.forEach(tag => {
+
             const tagElement = document.createElement("span");
 
             tagElement.className = "badge bg-secondary me-1";
             tagElement.textContent = tag;
 
             tagsContainer.appendChild(tagElement);
+
+            tagsContainer.innerHTML += `
+                <span class="badge bg-secondary me-1">
+                    ${tag}
+                </span>
+            `;
+
         });
 
         const modal = new bootstrap.Modal(
@@ -197,9 +321,13 @@ async function showProjectDetail(projectId) {
 
         modal.show();
 
+
     } catch (error) {
         console.error("Gagal memuat detail project:", error);
     }
+
+    });
+ Stashed changes
 }
 
 document.getElementById("contact-form").addEventListener("submit", async (event) => {
@@ -208,6 +336,7 @@ document.getElementById("contact-form").addEventListener("submit", async (event)
     const name = document.getElementById("contact-name").value;
     const email = document.getElementById("contact-email").value;
     const message = document.getElementById("contact-message").value;
+
 
     try {
         const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -233,4 +362,18 @@ document.getElementById("contact-form").addEventListener("submit", async (event)
     } catch (error) {
         console.error("Gagal mengirim pesan:", error);
     }
+
+    console.log("Data form:", {
+        name,
+        email,
+        message
+    });
+    document.getElementById("contact-status").innerHTML = `
+    <div class="alert alert-success">
+        Pesan berhasil dikirim!
+    </div>
+`;
+
+document.getElementById("contact-form").reset();
+
 });
